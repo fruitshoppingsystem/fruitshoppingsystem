@@ -35,14 +35,11 @@
     <select id="selectAllUsers" resultType="com.sys.pojo.Users">
         select * from users
     </select>
-    <update id="updateVIP" parameterType="String">
-        update users set uVIP = 1 where uEmail = #{uEmail}
+    <update id="updateVIP" parameterType="com.sys.pojo.Users">
+        update users set uVIP = #{uVIP} where uEmail = #{uEmail}
     </update>
-    <update id="userLogin" parameterType="String">
-        update users set uState = 1 where uEmail = #{uEmail}
-    </update>
-    <update id="userLogout" parameterType="String">
-        update users set uState = 0 where uEmail = #{uEmail}
+    <update id="updateState" parameterType="com.sys.pojo.Users">
+        update users set uState = #{uState} where uEmail = #{uEmail}
     </update>
 
 </mapper>

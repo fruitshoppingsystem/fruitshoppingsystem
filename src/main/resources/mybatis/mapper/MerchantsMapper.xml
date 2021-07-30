@@ -31,20 +31,11 @@
     <select id="selectAllMerchants" resultType="com.sys.pojo.Merchants">
         select * from merchants
     </select>
-    <update id="updateScore" parameterType="String">
+    <update id="updateScore" parameterType="com.sys.pojo.Merchants">
         update merchants set mScore = #{mScore} where mCertificatenum = #{mCertificatenum}
     </update>
-    <update id="merchantLogin" parameterType="integer">
-        update merchants set uState = 3 where mCertificatenum = #{mCertificatenum}
-    </update>
-    <update id="merchantLogout" parameterType="integer">
-        update merchants set uState = 5 where mCertificatenum = #{mCertificatenum}
-    </update>
-    <update id="merchantCheckPass" parameterType="integer">
-        update merchants set uState = 2 where mCertificatenum = #{mCertificatenum}
-    </update>
-    <update id="merchantCheckNoPass" parameterType="integer">
-        update merchants set uState = 1 where mCertificatenum = #{mCertificatenum}
+    <update id="updateState" parameterType="com.sys.pojo.Merchants">
+        update merchants set uState = #{uState} where mCertificatenum = #{mCertificatenum}
     </update>
 
 </mapper>
